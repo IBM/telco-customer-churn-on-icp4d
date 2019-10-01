@@ -122,7 +122,7 @@ By adding data a block of code will be added to the notebook. The code will auto
 
 ![Generated code to handle Pandas DataFrame](doc/source/images/wml-5-generated-code-dataframe.png)
 
-> **IMPORTANT**: Don't forget to update the next cell `df = df1` with the variable from the generated code.
+> **IMPORTANT**: Don't forget to update the next cell `df = df1` (or whatever your dataframe number is) with the variable from the generated code, in the case of `Remote` Virtualized data. If you are using the `Local` data, use `df = df_data_1` (or whatever your dataframe number is).
 
 ### 5. Follow the steps in the notebook
 
