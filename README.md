@@ -226,7 +226,7 @@ Once the model is enabled we can test the API interface from Cloud Pak for Data.
 
 ### Test the deployed model with cURL
 
-Clicking the *Generate Code* button will pop open a window with some copy for you to copy. The code will use the cURL command line utility to test the REST APIs. Here's an example of the generated code that can be run from a terminal window with the `curl` command.
+Clicking the *Generate Code* button will pop open a window with some code for you to copy. The code will use the cURL command line utility to test the REST APIs. Here's an example of the generated code that can be run from a terminal window with the `curl` command.
 
 ```bash
 curl -k -X POST \
