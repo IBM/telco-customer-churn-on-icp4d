@@ -206,7 +206,7 @@ Once created the model details will appear, take note of the *Endpoint* and *Dep
 
 ## 7. Deploy the project
 
-* You will be brought back to the project release page where you will see your model is *Disabled*. Click the *Launch* button to deploy your project.
+* Go back to your project release page, where you will see your model is *Disabled*. Click the *Launch* button to deploy your project.
 
 ![Deploy your project](doc/source/images/project-11-model-disabled.png)
 
@@ -220,7 +220,7 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 
 ### Test the saved model with built-in tooling
 
-Once the model is enabled we can test the API interface from Cloud Pak for Data. Click the enabled model deployment. From the *API* tab, default values are given and we can simply click the *Submit* button. The results are shown on the right.
+Once the model is enabled we can test the API interface from Cloud Pak for Data. In your deployment, choose the *Deployments* tab and click the enabled model deployment. From the *API* tab, default values are given and we can simply click the *Submit* button. The results are shown on the right.
 
 ![Testing the deployed model](doc/source/images/testing-1-api.png)
 
@@ -230,11 +230,11 @@ Clicking the *Generate Code* button will pop open a window with some code for yo
 
 ```bash
 curl -k -X POST \
-  https://9.10.111.122:31843/dmodel/v1/churn1/pyscript/churn/score \
-  -H 'Authorization: Bearer yeJhbGaaaiJSUzI1NiIsInR5cCI6IkpXVCJ9...jJDMbgsGqy9C_AsK5n28HysmH2NeXzEN9A' \
+  https://169.48.4.137:31843/dmodel/v1/telco-churn/pyscript/telco-model/score \
+  -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJwYWNrYWdlTmFtZSI6InRlbGNvLWNodXJuLTEiLCJwYWNrYWdlUm91dGUiOiJ0ZWxjby1jaHVybiIsImlhdCI6MTU2OTk2NTcyNn0.Xsj-wksYFVvxOpnamO97WESMgrbeh4mSh4qeIjzoc5_VYQahPoTwR14nM5vTqCpUI9kg9HRS7SIavFkeH9S-aR4z1FWibFj_Sbcnaib2uSbHZwX3OZvCxfriUxZn_mAYtQFR350LgjJwctI1I4tl4yi7G4J92SDvv3h2sVAy-5n9-0xUmmSmze8lPdCmejTAsus7wntQqCF6a0ON2RmSTX1VV1H0BBH6oxioYjKLRdRU5tXXyrYUacveTvc2B2eySAYkLV0xU5FNIRvWdwGxYtpXwb8jr_MCKTuCGBicqmu5JemQFucvSU7yGDmlq1OmTOAhm2MKFi6lv1WRLIGNlA' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
-  -d '{"args":{"input_json":[{"ID":4,"GENDER":"F","STATUS":"M","CHILDREN":2,"ESTINCOME":52004,"HOMEOWNER":"N","AGE":25,"TOTALDOLLARVALUETRADED":5030,"TOTALUNITSTRADED":23,"LARGESTSINGLETRANSACTION":1257,"SMALLESTSINGLETRANSACTION":125,"PERCENTCHANGECALCULATION":3,"DAYSSINCELASTLOGIN":2,"DAYSSINCELASTTRADE":19,"NETREALIZEDGAINS_YTD":0,"NETREALIZEDLOSSES_YTD":251}]}}'
+  -d '{"args":{"input_json":[{"gender":"Female","SeniorCitizen":0,"Partner":"No","Dependents":"No","tenure":1,"PhoneService":"No","MultipleLines":"No phone service","InternetService":"DSL","OnlineSecurity":"No","OnlineBackup":"No","DeviceProtection":"No","TechSupport":"No","StreamingTV":"No","StreamingMovies":"No","Contract":"Month-to-month","PaperlessBilling":"No","PaymentMethod":"Bank transfer (automatic)","MonthlyCharges":25.25,"TotalCharges":25.25}]}}'
 ```
 
 ## 9. Create a Python Flask app that uses the model
