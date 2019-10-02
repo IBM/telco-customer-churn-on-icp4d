@@ -10,16 +10,15 @@ When the reader has completed this Code Pattern, they will understand how to:
 * Deploy a selected machine learning model to production using Cloud Pak for Data
 * Create a front-end application to interface with the client and start consuming your deployed model.
 
-![](doc/source/images/architecture.png)
+![architecture diagram](doc/source/images/architecture.png)
 
 ## Flow
 
-1. Load the provided notebook into the Cloud Pak for Data platform.
+1. User loads the Jupyter notebook into the Cloud Pak for Data (CP4D) platform.
 1. [Telco customer churn data set](https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv)  is loaded into the Jupyter Notebook, either directly from the github repo, or as [Virtualized Data] after following the [Data Virtualization Tutorial]() from the [IBM Cloud Pak for Data Learning Path]().
-1. Describe, analyze and visualize data in the notebook.
-1. Preprocess the data, build machine learning models and test them.
-1. Deploy a selected machine learning model into production.
-1. Interact and consume your model using a frontend application.
+1. Preprocess the data, build machine learning models and save to Watson Machine Learning on CP4D.
+1. Deploy a selected machine learning model into production on the CP4D platform and obtain a scoring endpoint.
+1. Use the model for credit prediction using a frontend application.
 
 ## Included components
 
