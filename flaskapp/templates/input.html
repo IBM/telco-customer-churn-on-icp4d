@@ -1,0 +1,31 @@
+<!--
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain
+ * a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ * -->
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2>Will a customer stay or leave?</h2>
+<p>Input the following information and click submit to make a prediction.</p>
+
+<form action="#" method="post" class="add-entry">
+    <div class="section">
+        <div class="form-group">
+            <br>{{ generate_input_lines() | safe }}
+            <br><input type="submit" class="btn btn-success" value="Submit">
+        </div>
+    </div>
+</form>
+
+{% endblock %}
