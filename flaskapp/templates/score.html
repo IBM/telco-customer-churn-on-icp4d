@@ -1,0 +1,84 @@
+<!--
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain
+ * a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ * -->
+
+{% extends "layout.html" %}
+
+{% block headextension %}
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script> var result_json = {{ result|tojson }}; </script>
+  <script> var result_labels = {{ labels | tojson}}; </script>
+  <script type="text/javascript">
+
+    var predictions = [['Label', 'Probability']];
+    var result = result_json.result;
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      for(var i=0 ; i < result_labels.length ; i++) {
+        predictions[i+1] = [result_labels[i], result_json.probability[i] * 100];
+      }
+      var data = google.visualization.arrayToDataTable(predictions);
+
+      var options = {
+        title: 'Probability of churning',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script>
+{% endblock %}
+
+{% block body %}
+
+<h2>Customer churn risk prediction and suggested offer</h2>
+<div>
+  {% if yes_percent > 25 %}
+  This customer has <strong>High</strong> risk. The recommended offer is <strong>lower fees for 6 months</strong>.
+  {% elif yes_percent > 15 %}
+  This customer has <strong>Some</strong> risk. The recommended offer is <strong>lower fees for 3 month</strong>.
+  {% else %}
+  This customer has <strong>Low</strong> risk. The recommended offer is <strong>lower fees for 1 months</strong>.
+  {% endif %}
+</div>
+
+<div id="donutchart" style="width: 100%; height: 500px;"></div>
+
+<h2>Characteristics analyzed</h2>
+<div class="container">
+  <div>
+    <table>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
+
+      {% for k in request.form.keys() %}
+        <tr>
+          <td>{{k}}</td>
+          <td>{{request.form[k]}}</td>
+        </tr>
+      {% endfor %}
+
+    </table>
+  </div>
+</div>
+
+<!-- Uncomment to debug:
+  {{ response_scoring.json()["result"] }}
+-->
+
+{% endblock %}
+
