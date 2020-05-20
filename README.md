@@ -40,14 +40,13 @@ When the reader has completed this Code Pattern, they will understand how to:
 ## Steps
 
 1. [Create a new Project](#1-create-a-new-project)
+1. [Create a Space for Machine Learning Deployments](#2-create-a-space-for-machine-learning-deployments)
 1. [Upload the dataset](#2-upload-the-dataset) if you are not on the [Cloud Pak for Data Learning Path](https://developer.ibm.com/series/cloud-pak-for-data-learning-path/).
-1. [Import notebook to Cloud Pak for Data](#3-import-notebook-to-cloud-pak-for-data)
-1. [Import dataset into the notebook](#4-import-dataset-into-the-notebook)
-1. [Follow the steps in the notebook](#5-follow-the-steps-in-the-notebook)
-1. [Create a Space for Machine Learning Deployments](#6-create-a-space-for-machine-learning-deployments)
-1. [Deploying the model](#7-deploying-the-model)
-1. [Testing the model](#8-testing-the-model)
-1. [Create a Python Flask app that uses the model](#9-create-a-python-flask-app-that-uses-the-model)
+1. [Import notebook to Cloud Pak for Data](#4-import-notebook-to-cloud-pak-for-data)
+1. [Run the notebook](#5-run-the-notebook)
+1. [Deploying the model using the Cloud Pak for Data UI](#6-deploying-the-model-using-the-Cloud-Pak-for-Data-UI)
+1. [Testing the model](#7-testing-the-model)
+1. [Create a Python Flask app that uses the model](#8-create-a-python-flask-app-that-uses-the-model)
 
 ### 1. Create a new project
 
@@ -89,7 +88,7 @@ Give your deployment space a unique name, optional description, then click `Crea
 
 ### 3. Upload the dataset
 
-If you are not on the [Cloud Pak for Data Learning Path](https://developer.ibm.com/series/cloud-pak-for-data-learning-path/), which uses Virtualized Data, upload the dataset into your project now.
+If you are not on the [Cloud Pak for Data Learning Path](https://developer.ibm.com/series/cloud-pak-for-data-learning-path/), which uses Virtualized Data, upload the dataset into your project now, else skip down to [import notbook to Cloud Pak for Data](#4-import-notebook-to-cloud-pak-for-data).
 
 Clone this repository:
 
@@ -184,7 +183,7 @@ Continue to run the cells in the section to save the model to Cloud Pak for Data
 
 ![Clean up models and deployments](doc/source/images/cleanup-models-and-deployments.png)
 
-### 7. Deploying the model using the Cloud Pak for Data UI
+### 6. Deploying the model using the Cloud Pak for Data UI
 
 Now that we have created a model and saved it to our respository. We will want to deploy the model so it can be used by others. 
 
@@ -210,7 +209,7 @@ Once the status shows as *Deployed*, you can click on the deployment name to beg
 
 ![Status Deployed](doc/source/images/StatusDeployed.png)
 
-### 8. Testing the model
+### 7. Testing the model
 
 Cloud Pak for Data offers tools to quickly test out Watson Machine Learning models. We begin with the built-in tooling.
 
@@ -317,7 +316,7 @@ curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: appl
 
 A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
 
-### 9. Create a Python Flask app that uses the model
+### 8. Create a Python Flask app that uses the model
 
 You can also access the web service directly through the REST API. This allows you to use your model for inference in any of your apps. For this code pattern, we'll be using a Python Flask application to collect information, score it against the model, and show the results.
 
