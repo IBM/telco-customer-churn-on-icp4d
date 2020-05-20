@@ -41,7 +41,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 1. [Create a new Project](#1-create-a-new-project)
 1. [Create a Space for Machine Learning Deployments](#2-create-a-space-for-machine-learning-deployments)
-1. [Upload the dataset](#2-upload-the-dataset) if you are not on the [Cloud Pak for Data Learning Path](https://developer.ibm.com/series/cloud-pak-for-data-learning-path/).
+1. [Upload the dataset](#3-upload-the-dataset) if you are not on the [Cloud Pak for Data Learning Path](https://developer.ibm.com/series/cloud-pak-for-data-learning-path/).
 1. [Import notebook to Cloud Pak for Data](#4-import-notebook-to-cloud-pak-for-data)
 1. [Run the notebook](#5-run-the-notebook)
 1. [Deploying the model using the Cloud Pak for Data UI](#6-deploying-the-model-using-the-Cloud-Pak-for-Data-UI)
@@ -72,7 +72,7 @@ Give the project a unique name and click `Create`:
 
 Before we create a machine learning model, we will have to set up a deployment space where we can save and deploy the model.
 
-Follow the steps in this section to create a new deployment space. If you already have a deployment space set up, you can skip this section and follow the steps to [run the notebook](#5-run-the-notebook).
+Follow the steps in this section to create a new deployment space. If you already have a deployment space set up, you can skip this section and follow the steps to [upload the dataset](#3-upload-the-dataset).
 
 - Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
 
@@ -88,7 +88,7 @@ Give your deployment space a unique name, optional description, then click `Crea
 
 ### 3. Upload the dataset
 
-If you are not on the [Cloud Pak for Data Learning Path](https://developer.ibm.com/series/cloud-pak-for-data-learning-path/), which uses Virtualized Data, upload the dataset into your project now, else skip down to [import notbook to Cloud Pak for Data](#4-import-notebook-to-cloud-pak-for-data).
+If you are not on the [Cloud Pak for Data Learning Path](https://developer.ibm.com/series/cloud-pak-for-data-learning-path/), which uses Virtualized Data, upload the dataset into your project now, else skip down to [import notebook to Cloud Pak for Data](#4-import-notebook-to-cloud-pak-for-data).
 
 Clone this repository:
 
@@ -125,7 +125,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 ![Stop kernel](doc/source/images/JupyterStopKernel.png)
 
-> **Note**: The Jupyter notebook included in the project has been cleared of output. If you would like to see the notebook that has already been completed with output, you can refer [examples/Telco-customer-churn-ICP4D-Example.ipynb](examples/Telco-customer-churn-ICP4D-Example.ipynb).
+> **Note**: The Jupyter notebook included in the project has been cleared of output. If you would like to see the notebook that has already been completed with output, you can refer [examples/Telco-customer-churn-ICP4D-with-output.ipynb](examples/Telco-customer-churn-ICP4D-with-output.ipynb).
 
 ### 5. Run the notebook
 
