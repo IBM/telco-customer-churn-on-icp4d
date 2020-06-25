@@ -1,0 +1,5 @@
+---
+applications:
+- memory: 128MB
+  disk_quota: 256MB
+  name: telco-learning-path-icp4d
